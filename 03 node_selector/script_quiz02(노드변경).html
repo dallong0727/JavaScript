@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="section1">
+        <img src="1.jpg" width="200px" class="img1" style="border: 3px solid black;">
+        <br>
+        <select id = "select1">
+            <option value = "1.jpg">봄</option>
+            <option value = "2.jpg">여름</option>
+            <option value = "3.jpg">가을</option>
+            <option value = "4.jpg">겨울</option>
+        </select>
+        변경할 색상 : <input type="color" class="input1">
+    </section>
+    <script>
+        var select1 = document.getElementById("select1");
+        var img1 = document.querySelector(".section1 .img1");
+        var input1 = document.querySelector(".section1 .input1");
+
+        select1.onchange = function() {
+            img1.src = select1.value;
+        }
+        input1.onchange = function() {
+            img1.style.borderColor = input1.value;
+        }
+    </script>
+</body>
+</html>
