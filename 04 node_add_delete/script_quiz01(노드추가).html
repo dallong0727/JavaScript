@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {border-spacing: 0; border-collapse: collapse;}
+        table thead tr th td {border: 1px solid #777;}
+    </style>
+</head>
+<body>
+    <table>
+        <thead> <!-- 제목영역 -->
+            <tr>
+                <th>교시</th>
+                <th>훈련과목</th>
+                <th>담당자</th>
+                <th>훈련내용</th>
+            </tr>
+        </thead>
+        <tbody class= "todoList"><!-- 내용영역 -->
+            <tr>
+                <td><input type="text" size="3"></td>
+                <td><input type="text"></td>
+                <td><input type="text" size="5"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td><input type="text" size="3"></td>
+                <td><input type="text"></td>
+                <td><input type="text" size="5"></td>
+                <td><input type="text"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        window.onload = function() {
+            var addLists = document.getElementById("addLists");
+            addLists.onclick = function() {
+                for(var i = 1; i <= 5; i++) {
+                    var tr = document.createElement("tr");
+                    for(var j = 1; j <= 4; j++) {
+                        var td = document.createElement("td");
+                        if(j == 1) {
+                            td.innerHTML = "<input type='text' size='3'>";
+                        } else if(j == 3) {
+                            td.innerHTML = "<input type='text' size='5'>";
+                        } else {
+                            td.innerHTML = "<input type='text'>";
+                        }
+                        tr.appendChild(td);
+                    }
+                    document.querySelector(".todoList").appendChild(tr);
+                }
+            }
+            
+            var addList = document.getElementById("addList");
+            addList.onclick = function() {
+            var tr = document.createElement("tr");
+                for(var j = 1; j <= 4; j++) {
+                    var td = document.createElement("td");
+                    if(j == 1) {
+                        td.innerHTML = "<input type='text' size='3'>";
+                    } else if(j == 3) {
+                        td.innerHTML = "<input type='text' size='5'>";
+                    } else {
+                        td.innerHTML = "<input type='text'>";
+                    }
+                    tr.appendChild(td);
+                }
+            document.querySelector(".todoList").appendChild(tr);
+            }
+        }    
+    </script>
+
+    <button type="button" id="addLists">5개 추가하기</button>
+    <button type="button" id="addList">1개 추가하기</button>
+</body>
+</html>
+
+  <!-- <script>
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function() {
+            var name = document.getElementById("name");
+            var h1 = document.createElement("h1");
+            var form = document.querySelector("form");
+            h1.innerHTML= name.value + "님 안녕하세요";
+            console.log(h1.innerHTML);
+            name.remove();
+            btn1.remove();
+            form.appendChild(h1);
+        }
+        var btn2 = document.getElementById("btn2");
+        btn2.onclick = function() {
+            var work = document.querySelector(".work");
+            var li = document.createElement("li");
+            var text  = document.createTextNode(work.value);
+            li.innerHTML = work.value + "<button>X</button><button>↑</button><button>↓</button>"
+            document.querySelector(".list").appendChild(li);
+            work.value="";
+        }
+    </script> -->
+
+  
