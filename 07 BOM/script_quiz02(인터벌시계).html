@@ -21,7 +21,6 @@
 
     <script>
         var stop = null;
-
         function createTime() {
             /*
             1. 이함수는 1초마다 실행
@@ -33,7 +32,7 @@
             var hour = date.getHours();
             var minute = date.getMinutes();
             var second = date.getSeconds();
-            var time = hour + ":" 
+            var time = hour + ":"
             + (minute < 10 ? "0"+minute : minute)  + ":"
             + (second < 10 ? "0"+second : second); 
            /*  var time = `${hour < 10 ? `0${hour}` : hour } :
@@ -43,8 +42,7 @@
             var h2 = document.querySelector(".clock h2");
             h2.innerHTML = time;
         }
-        
-   /*      setInterval( () = > {
+        /* setInterval( () = > {
         }, 1000) */
 
         var num = 0;
@@ -63,7 +61,7 @@
             image.src = result[++num]; //src에 이미지 경로 추가
             image.className = "bgImg"; //클래스이름추가
             body.appendChild(image);
-            
+
             //객체의 길이를 구하는 방법      
             if(num == Object.keys(result).length) {
                 num = 0;

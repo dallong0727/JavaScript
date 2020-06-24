@@ -14,15 +14,25 @@
         // var test = function() {
         //     console.log(1);
         // }
-        var stop = setInterval(function() {
-            console.log(1);
-        }, 1000);
+        // var stop = setInterval(function() {
+        //     console.log(1);
+        // }, 1000);
 
-        //clearInterval(인터벌함수) - 인터벌을 중지
-        var stopInterval = document.querySelector(".stopInterval");
-        stopInterval.onclick = function() {
-            clearInterval(stop);
+        // //clearInterval(인터벌함수) - 인터벌을 중지
+        // var stopInterval = document.querySelector(".stopInterval");
+        // stopInterval.onclick = function() {
+        //     clearInterval(stop);
+        // }
+
+        //매개변수를 time함수에 전달하고 싶다면..?
+        function test(text) {
+            var temp = text;
+            return function() {
+                alert(temp);
+            };
         }
+        setTimeout(test(1),5000);
+
     </script>
 </body>
 </html>
