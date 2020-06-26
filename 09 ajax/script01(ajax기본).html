@@ -13,11 +13,11 @@
     <script>
         function ajax() {
             //1st
-            // fetch("hi.txt").then(function(response){
-            //     response.text().then(function(text) {
-            //         alert(text);
-            //     })
-            // })
+            fetch("hi.txt").then(function(response){
+                response.text().then(function(text) {
+                    alert(text);
+                })
+            })
             
             //2nd
             //then은 익명함수를 실행할 때 실행의 결과를 받아 처리할 함수를 넣어줍니다.
@@ -26,12 +26,12 @@
             // var callback = function() {
             //     console.log("이게 먼저 출력이 되야하는데"); 
             // }
-            // fetch("hi.txt}"),then(callback); 
+            // fetch("hi.txt").then(callback); 
             //     console.log(2);
             // }
             
             //위의 코드는 이렇게 변경됩니다.
-            // fetch("hi.txt}"),then(function() {
+            // fetch("hi.txt").then(function() {
             //  }); 
 
             //3nd
@@ -53,7 +53,6 @@
 
             //4nd
             fetch("hi.json").then(function(response){
-                console.log(response);
                 if(response.status == 404) { //요청 실패
                     alert("요청에 실패했습니다.")
                     return;
