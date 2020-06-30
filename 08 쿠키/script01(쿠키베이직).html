@@ -30,7 +30,7 @@
             var cookie = "";
             cookie += name + "=" + value + "; "; //키 = 값 설정;
             cookie += "expires=" + date.toUTCString();
-
+            console.log(cookie);
             //쿠키에 저장
             document.cookie = cookie;
         }
